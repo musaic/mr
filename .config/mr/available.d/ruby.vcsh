@@ -1,0 +1,3 @@
+[$HOME/.config/vcsh/repo.d/ruby.git]
+checkout = vcsh clone git://github.com/musaic/ruby.git ruby
+
