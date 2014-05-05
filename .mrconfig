@@ -1,6 +1,62 @@
 [DEFAULT]
+directory = "$HOME"
 git_gc = git gc "$@"
 jobs = 5
 
-include = cat /usr/local/share/mr/git-subtree
-include = cat ~/.config/mr/config.d/*
+#include = cat /usr/local/share/mr/git-subtree
+#include = cat ~/.config/mr/config.d/*
+
+#====================================================================
+#   MyRepo (MR)
+####
+
+[$HOME/.config/vcsh/repo.d/mr.git]
+checkout  = vcsh clone git://github.com/musaic/mr.git mr
+update    = vcsh mr pull
+push      = vcsh mr push
+status    = vcsh mr status
+gc        = vcsh mr gc
+
+
+
+#====================================================================
+#   DOTFILES
+####
+
+[$HOME/.config/vcsh/repo.d/dotfiles.git]
+checkout  = vcsh clone git://github.com/musaic/dotfiles.git dotfiles
+update    = vcsh dotfiles pull
+push      = vcsh dotfiles push
+status    = vcsh dotfiles status
+gc        = vcsh dotfiles gc
+
+#====================================================================
+#   OH-MY-ZSH
+#
+# NOTE: The oh-my-zsh repository is a forked repo that I maintain separately
+#       from the rest of my (ZSH) startup files.  The oh-my-zsh repo managed
+#       by vcsh is desgined for checkout into ~/.zsh/oh-my-zsh
+####
+
+[$HOME/.config/vcsh/repo.d//oh-my-zsh.git]
+checkout =  vcsh oh-my-zsh clone git://github.com/musaic/oh-my-zsh.git oh-my-zsh
+update   =  vcsh oh-my-zsh pull
+commit    = vcsh oh-my-zsh commit
+push     =  vcsh oh-my-zsh push
+status   =  vcsh oh-my-zsh status
+gc       =  vcsh oh-my-zsh gc
+
+
+# pre_checkout = mkdir -p $HOME/.zsh/oh-my-zsh
+# checkout =  VCSH_BASE=$HOME/.zsh/oh-my-zsh \
+#             vcsh oh-my-zsh clone git://github.com/musaic/oh-my-zsh.git oh-my-zsh
+# update   =  VCSH_BASE=$HOME/.zsh/oh-my-zsh \
+#             vcsh oh-my-zsh pull
+# push     =  VCSH_BASE=$HOME/.zsh/oh-my-zsh \
+#             vcsh oh-my-zsh push
+# status   =  VCSH_BASE=$HOME/.zsh/oh-my-zsh \
+#             vcsh oh-my-zsh status
+# gc       =  VCSH_BASE=$HOME/.zsh/oh-my-zsh \
+#             vcsh oh-my-zsh gc
+
+
