@@ -1,3 +1,0 @@
-[$HOME/.config/vcsh/repo.d/private.git]
-checkout = vcsh clone git://github.com/musaic/private.git private
-

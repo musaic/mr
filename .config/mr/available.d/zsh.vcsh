@@ -1,4 +1,0 @@
-[$HOME/.config/vcsh/repo.d/zsh.git]
-checkout = vcsh clone git://github.com/musaic/zsh.git zsh
-order = 1
-

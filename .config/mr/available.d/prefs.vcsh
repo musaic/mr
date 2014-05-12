@@ -1,3 +1,0 @@
-[$HOME/.config/vcsh/repo.d/prefs.git]
-checkout = vcsh clone git://github.com/musaic/prefs.git prefs
-
